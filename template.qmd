@@ -1,0 +1,56 @@
+---
+title: Untitled
+author: 
+  - name: Filippo Gambarota
+    email: filippo.gambarota@unipd.it
+    twitter: fgambarota
+    github: filippogambarota
+    orcid: 1000
+format:
+  quarto-revealjs-mclean-revealjs:
+    incremental: true
+date: last-modified
+final-slide: true
+df-print: tibble
+bibliography: "`r filor::fil()$bib`"
+csl: "`r filor::fil()$csl`"
+---
+
+## Introduction
+
+*TODO* Create an example file that [demonstrates]{.emp} the `formatting` and features of your format. `filor::pb()`
+
+- ciao
+- ciao
+
+## More Information
+
+You can learn more about controlling the appearance [@r-lang] of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
+
+```{r}
+#| echo: true
+x <- rnorm(100)
+mean(x)
+```
+
+# Section {.section}
+
+## Section {.notitle}
+
+::: {.panel-tabset}
+
+## Plot
+
+```{r}
+hist(rnorm(100))
+```
+
+## Data
+
+```{r}
+head(mtcars)
+```
+
+:::
+
+## References {.references}
