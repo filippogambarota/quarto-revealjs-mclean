@@ -9,10 +9,14 @@ author:
     github: filippogambarota
 format:
   quarto-revealjs-mclean-revealjs:
-    incremental: true
+    incremental: false
+    code-link: true
+    code-line-numbers: false
+    html-math-method: mathjax
     filters:
       - nutshell
       - code-fullscreen
+from: markdown+emoji
 date: last-modified
 final-slide: false
 df-print: tibble
