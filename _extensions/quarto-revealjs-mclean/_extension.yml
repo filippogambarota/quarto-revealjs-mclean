@@ -7,6 +7,8 @@ contributes:
     revealjs:
       theme: [default, custom.scss]
       template: custom.html
+      template-partials:
+        - title-slide.html
       highlight-style: arrow
       code-line-numbers: false
       code-copy: true

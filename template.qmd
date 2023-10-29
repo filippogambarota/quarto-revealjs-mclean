@@ -1,56 +1,52 @@
 ---
-title: Untitled
+title: Title
+subtitle: Subtitle
+institute: "\\@event | Place"
 author: 
-  - name: Filippo Gambarota
+  - name: "Filippo Gambarota"
     email: filippo.gambarota@unipd.it
     twitter: fgambarota
     github: filippogambarota
-    orcid: 1000
 format:
   quarto-revealjs-mclean-revealjs:
     incremental: true
+    filters:
+      - nutshell
+      - code-fullscreen
 date: last-modified
-final-slide: true
+final-slide: false
 df-print: tibble
 bibliography: "`r filor::fil()$bib`"
 csl: "`r filor::fil()$csl`"
 ---
 
-## Introduction
-
-*TODO* Create an example file that [demonstrates]{.emp} the `formatting` and features of your format. `filor::pb()`
-
-- ciao
-- ciao
-
-## More Information
-
-You can learn more about controlling the appearance [@r-lang] of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
-
 ```{r}
-#| echo: true
-x <- rnorm(100)
-mean(x)
+#| label: setup
+knitr::opts_chunk$set(echo = TRUE,
+                      dev = "svg",
+                      fig.width = 6,
+                      fig.asp = 0.618,
+                      fig.align = "center",
+                      comment = "##")
 ```
 
-# Section {.section}
+## Quarto
 
-## Section {.notitle}
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
 
-::: {.panel-tabset}
+## Bullets
 
-## Plot
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
-hist(rnorm(100))
+1 + 1
 ```
 
-## Data
 
-```{r}
-head(mtcars)
-```
-
-:::
-
-## References {.references}

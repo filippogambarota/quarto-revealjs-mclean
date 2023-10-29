@@ -1,23 +1,18 @@
-# <%= title %> Format
+# Quarto Revealjs Mclean
 
-## Installing
-
-*TODO*: Replace the `<github-organization>` with your GitHub organization.
+## Extensions
 
 ```bash
-quarto use template <github-organization>/<%= filesafename %>
+quarto add quarto-ext/fontawesome
+quarto install extension schochastics/academicons
+quarto install extension shafayetShafee/bsicons
+quarto add mcanouil/quarto-iconify
+quarto add jmgirard/lordicon
+quarto install extension jmbuhr/quarto-qrcode
+quarto install extension schochastics/quarto-nutshell
+quarto add shafayetShafee/downloadthis
+quarto add shafayetShafee/code-fullscreen
+quarto add shafayetShafee/hide-comment
+quarto add shafayetShafee/material-icons
 ```
 
-This will install the extension and create an example qmd file that you can use as a starting place for your article.
-
-## Using
-
-*TODO*: Describe how to use your format.
-
-## Format Options
-
-*TODO*: If your format has options that can be set via document metadata, describe them.
-
-## Example
-
-Here is the source code for a minimal sample document: [example.qmd](example.qmd).

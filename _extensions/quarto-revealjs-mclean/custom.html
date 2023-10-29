@@ -60,28 +60,25 @@ $endif$
 $body$
 
 <!-- FINAL SLIDE -->
-
 $if(final-slide)$
-<section class="final-slide"; id = "final-slide">
-<center>
+<section class="final-slide center">
 $for(by-author/first)$
 $if(by-author.email)$
-<p class="final-slide-info">
+<h4 class="title center">
 <i class="fa fa-envelope"></i> &nbsp; <a href="mailto:$by-author.email[1]$">$by-author.email[1]$</a>
-</p>
+</h4>
 $endif$
 $if(by-author.metadata.github)$
-<p class="final-slide-info">
+<h4 class="title">
 <i class="fa fa-github"></i> &nbsp; <a href="https://github.com/$by-author.metadata.github[1]$">$by-author.metadata.github[1]$</a>
-</p>
+</h4>
 $endif$
 $if(by-author.metadata.twitter)$
-<p class="final-slide-info">
+<h4 class="title">
 <i class="fa fa-twitter"></i> &nbsp; <a href="https://twitter.com/$by-author.metadata.fa-twitter[1]$">@$by-author.metadata.twitter[1]$</a>
-</p>
+</h4>
 $endif$
 $endfor$
-</center>
 </section>
 $endif$
 

@@ -2,9 +2,35 @@
 $base-color: #191919;
 $emp-color: #FA3F9F;
 
+$p-font-size: 0.9em !default;
+$h1-font-size: 1.8em !default;
+$h2-font-size: 1.3em !default;
+$h3-font-size: 1.15em !default;
+$h4-font-size: 1em !default;
+
 /*-- scss:rules --*/
 
 /* GENERAL */
+
+.citation .refbook {
+  color: blue!important;
+}
+
+aside {
+  font-size: 50%!important;
+}
+
+.reveal h1 {
+  font-size: $h1-font-size;
+}
+
+.reveal h2 {
+  font-size: $h2-font-size;
+}
+
+.reveal p {
+  font-size: $p-font-size;
+}
 
 .emp {
   color: $emp-color;
@@ -84,6 +110,10 @@ p code:not(.sourceCode){
   background-color: $base-color!important;
 }
 
+.section h1 {
+  font-size: $h1-font-size!important;
+}
+
 /* REFERENCES */
 
 .references div {
@@ -92,13 +122,20 @@ p code:not(.sourceCode){
 
 /* FINAL SLIDE */
 
-.final-slide {
-  background-color: $base-color!important;
-  padding-top: 25%;
+.center h4 {
+  text-align: center;
 }
 
-.final-slide a {
+.center a {
   color: white!important;
+}
+
+.final-slide {
+  background-color: $base-color!important;
+}
+
+.final-slide h4 {
+  text-align: center!important;
 }
 
 .reveal .sourceCode {
@@ -114,4 +151,10 @@ p code:not(.sourceCode){
 
 .cell-output {
   padding-top: 1%;
+}
+
+/* TITLE SLIDE */
+
+.author {
+  color: #7A7A7A;
 }
