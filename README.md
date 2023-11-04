@@ -1,4 +1,4 @@
-# Quarto Revealjs Mclean
+# Quarto Minimal Revealjs
 
 ## Extensions
 

@@ -2,15 +2,38 @@
 $base-color: #191919;
 $emp-color: #FA3F9F;
 
-$p-font-size: 0.9em !default;
-$h1-font-size: 1.8em !default;
-$h2-font-size: 1.3em !default;
-$h3-font-size: 1.15em !default;
+$p-font-size: 0.75em !default;
+$h1-font-size: 1.6em !default;
+$h2-font-size: 1.2em !default;
+$h3-font-size: 1em !default;
 $h4-font-size: 1em !default;
+$refs-font-size: 0.5em!default;
+$toc-font-size: 0.7em!default;
+$cap-font-size: 0.6em!default;
+$quest-font-size: 1.2em !default;
 
 /*-- scss:rules --*/
 
 /* GENERAL */
+
+/* captions */
+
+.caption {
+  font-size: $cap-font-size!important;
+}
+
+details {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+summary {
+  font-size: 60%;
+}
+
+ul {
+  font-size: $p-font-size;
+}
 
 .citation .refbook {
   color: blue!important;
@@ -52,6 +75,10 @@ p code:not(.sourceCode){
   border-radius: 1ch;
   padding-block: 0.2ch;
   padding-inline: 1ch;
+}
+
+code {
+  font-size: 80%;
 }
 
 /* PANELSET */
@@ -116,8 +143,16 @@ p code:not(.sourceCode){
 
 /* REFERENCES */
 
-.references div {
-  font-size: 90%;
+.refs h2 {
+  font-size: $h2-font-size!important;
+}
+
+.refs {
+  font-size: 100%!important;
+}
+
+.csl-entry {
+  font-size: $refs-font-size;
 }
 
 /* FINAL SLIDE */
@@ -157,4 +192,51 @@ p code:not(.sourceCode){
 
 .author {
   color: #7A7A7A;
+}
+
+/* SLIDE NUMBERING */
+
+/* https://github.com/quarto-dev/quarto-cli/discussions/5566#discussioncomment-5925054 */
+
+/* removing from title slide */
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+/* removing from section slides */
+.reveal .slide-number > a[href*='#/section'] {
+  display: none;
+}
+
+/* removing from final slide */
+.reveal .slide-number > a[href*='final-slide'] {
+  display: none;
+}
+
+/* removing from toc slide */
+.reveal .slide-number > a[href*='#/TOC'] {
+  display: none;
+}
+
+/* TOC */
+
+#TOC ul {
+  font-size: $toc-font-size;
+}
+
+/* FIGURES */
+
+.reveal img {
+  margin: 0;
+}
+
+/* QUESTION SLIDE */
+
+.question h1 {
+  text-align: center!important;
+  font-size: $quest-font-size!important;
+}
+
+.question {
+  background-color: #A9A9A9!important;
 }

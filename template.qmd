@@ -5,38 +5,90 @@ institute: "\\@event | Place"
 author: 
   - name: "Filippo Gambarota"
     email: filippo.gambarota@unipd.it
-    twitter: fgambarota
     github: filippogambarota
-format:
-  quarto-revealjs-mclean-revealjs:
+format: 
+  quarto-slides-revealjs:
+    slide-number: true
     incremental: false
     code-link: true
     code-line-numbers: false
     html-math-method: mathjax
+    margin: 0
     filters:
       - nutshell
       - code-fullscreen
 from: markdown+emoji
 date: last-modified
-final-slide: false
-df-print: tibble
+final-slide: true
+df-print: default
 bibliography: "`r filor::fil()$bib`"
 csl: "`r filor::fil()$csl`"
+toc: true
+toc-title: Contents
+toc-depth: 1
+engine: knitr
 ---
 
 ```{r}
 #| label: setup
+#| include: false
 knitr::opts_chunk$set(echo = TRUE,
                       dev = "svg",
-                      fig.width = 6,
+                      fig.width = 7,
                       fig.asp = 0.618,
                       fig.align = "center",
-                      comment = "##")
+                      comment = "#>")
+```
+
+```{r}
+#| label: packages
+#| include: false
+library(gt)
+library(ggplot2)
+library(viridis)
+```
+
+```{r}
+#| label: ggplot2
+#| include: false
+mtheme <- function(size = 15){
+  theme_minimal(base_size = size, 
+                base_family = "sans") +
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust = 0.5),
+        strip.text = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+}
+
+theme_set(mtheme())
+
+# palettes
+options(ggplot2.continuous.colour="viridis")
+options(ggplot2.continuous.fill = "viridis")
+scale_colour_discrete <- scale_colour_viridis_d
+scale_fill_discrete <- scale_fill_viridis_d
+```
+
+```{r}
+#| label: gt
+#| include: false
+qtab <- function(data, digits = 3){
+  data |> 
+    gt() |> 
+    gt::cols_align(align = "center") |> 
+    tab_style(
+      style = cell_text(weight = "bold"),
+      locations = cells_column_labels()
+    ) |> 
+    fmt_number(decimals = digits)
+}
 ```
 
 ## Quarto
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+Quarto enables [you]{.emp} to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>. @Du2017-pf
+
+# Section {.section}
 
 ## Bullets
 
@@ -45,12 +97,96 @@ When you click the **Render** button a document will be generated that includes:
 -   Content authored with markdown
 -   Output from executable code
 
+## Table
+
+Table   s using the `gt` package are nice. The equations should be formatted using a double-dollar sign:
+
+```{r}
+#| echo: true
+xx <- iris[1:5, ]
+xx$Sepal.Length <- sprintf("$$\\alpha = %s$$", xx$Sepal.Length)
+xx |> 
+  gt()
+```
+
+# A really really really really really amazing question to ask? {.question .unlisted}
+
+## Table
+
+Tables using the `gt` package are nice. The equations should be formatted using a double-dollar sign:
+
+```{r}
+#| echo: true
+qtab(xx)
+```
+
 ## Code
 
 When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
+#| code-fold: true
 1 + 1
 ```
 
+```{r}
+#| lst-cap: ciao
+#| lst-label: ciao
+1 + 1
+```
 
+## Code
+
+If you want to cross-reference a code block, see in @lst-code
+
+```{#lst-code .r lst-cap="Some R code"}
+a <- 1
+a+1
+```
+
+## Figures
+
+Come visto in @fig-tioca
+
+```{r}
+#| fig-cap: ciaone
+#| label: fig-tioca
+#| code-fold: false
+ggplot(pressure, aes(x = pressure, y = temperature)) +
+  geom_point()
+```
+
+## Color palette discrete
+
+```{r}
+iris |> 
+    ggplot(aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + 
+    geom_point() +
+    geom_smooth()
+```
+
+## Color palette continous
+
+```{r}
+ggplot(data = mtcars, aes(x = hp, y = mpg, color = wt )) + 
+    geom_point()
+```
+
+    
+## Multiple operations
+
+You can collapse multiple operations into a single one:
+
+```{r}
+#| collapse: true
+1 + 1
+mean(rnorm(100))
+2 + 2
+```
+
+## References {.refs}
+
+::: {#refs}
+:::
+
+## More info

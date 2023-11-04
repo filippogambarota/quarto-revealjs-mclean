@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta charset="utf-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
 $if(quarto-version)$
   <meta name="generator" content="quarto-$quarto-version$" />
 $else$
@@ -61,7 +61,7 @@ $body$
 
 <!-- FINAL SLIDE -->
 $if(final-slide)$
-<section class="final-slide center">
+<section class="final-slide center" id = "final-slide">
 $for(by-author/first)$
 $if(by-author.email)$
 <h4 class="title center">
@@ -70,12 +70,12 @@ $if(by-author.email)$
 $endif$
 $if(by-author.metadata.github)$
 <h4 class="title">
-<i class="fa fa-github"></i> &nbsp; <a href="https://github.com/$by-author.metadata.github[1]$">$by-author.metadata.github[1]$</a>
+<i class="fa-brands fa-github"></i> &nbsp; <a href="https://github.com/$by-author.metadata.github[1]$">$by-author.metadata.github[1]$</a>
 </h4>
 $endif$
 $if(by-author.metadata.twitter)$
 <h4 class="title">
-<i class="fa fa-twitter"></i> &nbsp; <a href="https://twitter.com/$by-author.metadata.fa-twitter[1]$">@$by-author.metadata.twitter[1]$</a>
+<i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; <a href="https://twitter.com/$by-author.metadata.fa-twitter[1]$">@$by-author.metadata.twitter[1]$</a>
 </h4>
 $endif$
 $endfor$
