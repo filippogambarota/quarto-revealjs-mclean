@@ -218,6 +218,11 @@ code {
   display: none;
 }
 
+/* removing from question slide */
+.reveal .slide-number > a[href*='question'] {
+  display: none;
+}
+
 /* TOC */
 
 #TOC ul {
@@ -238,5 +243,5 @@ code {
 }
 
 .question {
-  background-color: #A9A9A9!important;
+  background-color: $base-color!important;
 }

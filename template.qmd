@@ -13,7 +13,7 @@ format:
     code-link: true
     code-line-numbers: false
     html-math-method: mathjax
-    margin: 0
+    margin: 0.1
     filters:
       - nutshell
       - code-fullscreen
